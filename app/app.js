@@ -8,7 +8,7 @@ let menuLists = document.querySelectorAll(".nav-bar .menu");
 let all = document.querySelector(".all");
 let navItems = document.querySelectorAll(".menu .nav-menu nav > ul li");
 let socialMedias = document.querySelectorAll(".social-media > nav > ul li");
-let copyryte = document.querySelector(".copyryte");
+let copyrytes = document.querySelectorAll(".copyryte");
 
 let rightSide = document.querySelector(".right");
 let leftSide = document.querySelector(".left");
@@ -31,7 +31,9 @@ menuBtns.forEach((menuBtn) => {
     socialMedias.forEach((socialMedia) => {
       socialMedia.classList.add("social");
     });
-    copyryte.classList.add("copyryte-animation");
+    copyrytes.forEach(copyryte=>{
+        copyryte.classList.add("copyryte-animation");
+    })
   });
 });
 closeBtns.forEach((closeBtn) => {
@@ -50,7 +52,10 @@ closeBtns.forEach((closeBtn) => {
     socialMedias.forEach((socialMedia) => {
       socialMedia.classList.remove("social");
     });
-    copyryte.classList.remove("copyryte-animation");
+    copyrytes.forEach(copyryte=>{
+        copyryte.classList.remove("copyryte-animation");
+    })
+   
 
   });
 });
