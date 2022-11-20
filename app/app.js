@@ -279,3 +279,13 @@ window.addEventListener('scroll',()=>{
   
 })
 
+const mobileMode = document.querySelector('.mobile-mode')
+
+if(window.innerWidth < 1024){
+    console.log("ok")
+    rightSide.style.display = "none"
+    mobileMode.classList.remove('hide')
+    console.log(leftSide)
+    leftSide.classList.add('fullWidth')
+
+}
