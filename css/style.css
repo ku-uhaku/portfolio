@@ -35,7 +35,7 @@ ul{
     list-style: none;
 }
 .hide{
-    display: none;
+    display: none !important;
 }
 .container-section:first-child{
     transform: translateX(0);
@@ -982,7 +982,7 @@ footer p{
     .qoutes{
         justify-content: center;
     }
-   
+    
     .container{
         padding: 2rem 3rem;
     }
@@ -1005,10 +1005,41 @@ footer p{
     p{
         font-size: 1.2rem !important;
     }
+    .sentense h2{
+        font-size: 1.4rem !important;
+        margin: auto;
+        text-align: center;
+    }
     .hardSkills h2{
         font-size: 1.4rem !important;
     }
     .header-card h2{
         font-size: 1.3rem !important;
     }
+    .home{
+        margin-bottom: -100px;
+    }
+    .mobile-mode .card-profile{
+        width: 25rem;
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (max-width:400px){
+    .hardSkills h2{
+        font-size: 1.2rem !important;
+    }
+    .header-how-am-i .dash{
+       display: none;
+    }
+    .header-how-am-i h1{
+        margin-right: 2rem;
+    }
+    .qoutes{
+        padding: 2rem 3rem;
+    }
+    .img-coute img{
+        width: 100%;
+    }
+  
 }
