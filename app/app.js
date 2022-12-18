@@ -1,131 +1,127 @@
-let menuBtns = document.querySelectorAll(".menu-bars img");
-
-let closeBtns = document.querySelectorAll(".close-X img");
-
-let emptyNavs = document.querySelectorAll(".nav-bar .empty-aside");
-
-let menuLists = document.querySelectorAll(".nav-bar .menu");
+let menuBtn = document.querySelector(".menu-bars i");
+let closeBtn = document.querySelector(".close-X i");
+let emptyNav = document.querySelector(".nav-bar .empty-aside");
+let menuList = document.querySelector(".nav-bar .menu");
+let nav = document.querySelector(".nav");
 let all = document.querySelector(".all");
 let navItems = document.querySelectorAll(".menu .nav-menu nav > ul li");
 let socialMedias = document.querySelectorAll(".social-media > nav > ul li");
 let copyrytes = document.querySelectorAll(".copyryte");
-
 let rightSide = document.querySelector(".right");
 let leftSide = document.querySelector(".left");
-menuBtns.forEach((menuBtn) => {
-  menuBtn.addEventListener("click", (e) => {
 
-    emptyNavs.forEach((emptyNav) => {
-      emptyNav.style.flex = "12";
-      emptyNav.style.transform = "translate(0%)";
-    });
-    menuLists.forEach((menuList) => {
-      menuList.style.flex = "6";
-      menuList.style.transform = "translate(-0%)";
-      menuList.parentElement.parentElement.style.zIndex = "1";
-    });
-
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].classList.add(`xd${i}`);
-    }
-    socialMedias.forEach((socialMedia) => {
-      socialMedia.classList.add("social");
-    });
-    copyrytes.forEach(copyryte=>{
-        copyryte.classList.add("copyryte-animation");
-    })
+//function to show menu
+menuBtn.addEventListener("click", (e) => {
+  nav.style.zIndex = "10000";
+  emptyNav.style.zIndex = "100000";
+  leftSide.style.zIndex = "-100000";
+  emptyNav.style.width = leftSide.offsetWidth + "px";
+  emptyNav.style.transform = "translate(0%)";
+  menuList.style.width = rightSide.offsetWidth + "px";
+  menuList.style.transform = "translate(0%)";
+  document.body.style.overflow = "hidden";
+  for (let i = 0; i < navItems.length; i++) {
+    navItems[i].classList.add(`xd${i}`);
+  }
+  socialMedias.forEach((socialMedia) => {
+    socialMedia.classList.add("social");
   });
-});
-closeBtns.forEach((closeBtn) => {
-  closeBtn.addEventListener("click", (e) => {
-    emptyNavs.forEach((emptyNav) => {
-      emptyNav.style.transform = "translate(-100%)";
-    });
-    menuLists.forEach((menuList) => {
-      menuList.parentElement.parentElement.style.zIndex = "-1";
-      menuList.style.transform = "translate(100%)";
-    });
+  copyrytes.forEach(copyryte=>{
+      copyryte.classList.add("copyryte-animation");
+  })
+})
+//function to hide menu
+closeBtn.addEventListener("click", (e) => {
+  setTimeout(() => {
+    nav.style.zIndex = "-10000";
+    leftSide.style.zIndex = "10000";
+  }, 400);
 
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].classList.remove(`xd${i}`);
-    }
-    socialMedias.forEach((socialMedia) => {
-      socialMedia.classList.remove("social");
-    });
-    copyrytes.forEach(copyryte=>{
-        copyryte.classList.remove("copyryte-animation");
-    })
-   
-
+  emptyNav.style.transform = "translate(-100%)";
+  menuList.style.transform = "translate(110%)";
+  document.body.style.overflow = "auto";
+  for (let i = 0; i < navItems.length; i++) {
+    navItems[i].classList.remove(`xd${i}`);
+  }
+  socialMedias.forEach((socialMedia) => {
+    socialMedia.classList.remove("social");
   });
-});
+  copyrytes.forEach(copyryte=>{
+      copyryte.classList.remove("copyryte-animation");
+  })
+})
 
 
+// menuBtns.forEach((menuBtn) => {
+//   menuBtn.addEventListener("click", (e) => {
+  
+//     nav.style.zIndex = "10000";
+    
+//     leftSide.style.zIndex = "0"
+//     emptyNavs.forEach((emptyNav) => {
+//       emptyNav.style.width = leftSide.offsetWidth + "px";
+//       emptyNav.style.transform = "translate(0%)";
+//     });
+//     menuLists.forEach((menuList) => {
+//       menuList.style.width = rightSide.offsetWidth + "px";
+//       menuList.style.transform = "translate(-0%)";
+//     });
+//     document.body.style.overflow = "hidden";
+
+//     for (let i = 0; i < navItems.length; i++) {
+//       navItems[i].classList.add(`xd${i}`);
+//     }
+//     socialMedias.forEach((socialMedia) => {
+//       socialMedia.classList.add("social");
+//     });
+//     copyrytes.forEach(copyryte=>{
+//         copyryte.classList.add("copyryte-animation");
+//     })
+//   });
+// });
+// closeBtns.forEach((closeBtn) => {
+
+//   closeBtn.addEventListener("click", (e) => {
+//     setTimeout(() => {
+//       nav.style.zIndex = "-10000";
+//       leftSide.style.zIndex = "10000"
+//     }, 1000);
+    
+//     document.body.style.overflow = "auto";
+//     emptyNavs.forEach((emptyNav) => {
+//       emptyNav.style.transform = "translate(-100%)";
+//     });
+//     menuLists.forEach((menuList) => {
+
+//       menuList.style.transform = "translate(110%)";
+//     });
+//     for (let i = 0; i < navItems.length; i++) {
+//       navItems[i].classList.remove(`xd${i}`);
+//     }
+//     socialMedias.forEach((socialMedia) => {
+//       socialMedia.classList.remove("social");
+//     });
+//     copyrytes.forEach(copyryte=>{
+//         copyryte.classList.remove("copyryte-animation");
+//     })
+//   });
+// });
+
+
+
+//scorlling
 
 window.addEventListener("scroll", () => {
-  rightSide.style.width = "30%";
-  leftSide.style.width = "70%";
-  rightSide.classList.add("scrolled");
+
 
   if (window.scrollY == 0) {
     rightSide.style.width = "40%";
     leftSide.style.width = "60%";
     rightSide.classList.remove("scrolled");
-    menuBtns.forEach((menuBtn) => {
-        menuBtn.addEventListener("click", (e) => {
-            menuLists.forEach((menuList) => {
-                menuList.style.flex = "6";
-                menuList.style.transform = "translate(-0%)";
-                menuList.parentElement.parentElement.style.zIndex = "1";
-              });
-            emptyNavs.forEach((emptyNav) => {
-                emptyNav.style.flex = "12";
-
-                emptyNav.style.transform = "translate(0%)";
-              });
-        });
-    });
-    closeBtns.forEach((closeBtn) => {
-        closeBtn.addEventListener("click", (e) => {
-            emptyNavs.forEach((emptyNav) => {
-                emptyNav.style.transform = "translate(-100%)";
-              });
-            menuLists.forEach((menuList) => {
-                menuList.style.transform = "translate(100%)";
-
-                menuList.parentElement.parentElement.style.zIndex = "-1";
-              });
-        });
-    });
-    
-
-
-  } else {
-    menuBtns.forEach((menuBtn) => {
-        menuBtn.addEventListener("click", (e) => {
-            menuLists.forEach((menuList) => {
-                menuList.style.flex = "5";
-                menuList.style.transform = "translate(-0%)";
-                menuList.parentElement.parentElement.style.zIndex = "1";
-              });
-            emptyNavs.forEach((emptyNav) => {
-                emptyNav.style.flex = "16";
-                emptyNav.style.transform = "translate(0%)";
-              });
-        });
-    });
-    closeBtns.forEach((closeBtn) => {
-        closeBtn.addEventListener("click", (e) => {
-            emptyNavs.forEach((emptyNav) => {
-                emptyNav.style.transform = "translate(-100%)";
-              });
-            menuLists.forEach((menuList) => {
-                menuList.style.transform = "translate(100%)";
-
-                menuList.parentElement.parentElement.style.zIndex = "-1";
-              });
-        });
-    });
+  }else{
+    rightSide.style.width = "30%";
+    leftSide.style.width = "70%";
+    rightSide.classList.add("scrolled");
   }
 });
 
@@ -256,7 +252,7 @@ for (let i = 1; i < 7; i++) {
   getApiQuotes(i);
 }
 
-const footerBtn = document.querySelector("footer img");
+const footerBtn = document.querySelector("footer i");
 
 footerBtn.addEventListener("click", () => {
   window.scrollTo(1, 0);
@@ -285,15 +281,34 @@ window.addEventListener("scroll", () => {
   });
 });
 
-const mobileMode = document.querySelector(".mobile-mode");
+// const mobileMode = document.querySelector(".mobile-mode");
 
-if (window.innerWidth < 1024) {
-  console.log("ok");
-  rightSide.style.display = "none";
-  mobileMode.classList.remove("hide");
+// if (window.innerWidth < 1024) {
+//   console.log("ok");
+//   rightSide.style.display = "none";
+//   mobileMode.classList.remove("hide");
 
-  leftSide.classList.add("fullWidth");
-} else {
-  mobileMode.classList.add("hide");
-  rightSide.style.display = "block";
-}
+//   leftSide.classList.add("fullWidth");
+// } else {
+//   mobileMode.classList.add("hide");
+//   rightSide.style.display = "block";
+// }
+
+const age = document.querySelector(".age");
+//function get age when you born
+const getAge = (dateString) => {
+  let today = new Date();
+  let birthDate = new Date(dateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+};
+age.textContent = getAge("2000-03-05");
+
+console.log("%cHHHH sir ***** we dont do that here","color: red; font-size: 20px");
+
+
+
