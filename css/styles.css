@@ -1088,13 +1088,14 @@ footer p{
         width: 25rem;
         margin-top: 7rem;
     }
+    .empty-aside{
+        display: none;
+    }
     
 }
 
 @media screen and (max-width:400px){
-    .empty-aside{
-        display: none;
-    }
+    
     /* .container{
         padding: 2rem 1rem !important;
     }
