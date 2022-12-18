@@ -115,7 +115,7 @@ body{
 .right .card-profile {
     position: relative;
     border: 1px solid var(--color-light-400);
-    padding: 2rem;
+    /* padding: 2rem; */
     margin-bottom: 2rem;
     transition: var(--transition);
 }
@@ -752,7 +752,7 @@ footer p{
     transition: var(--transition);
     background: var(--color-light-800);
     z-index: 0;
-    padding: 5rem 5rem;
+    /* padding: 5rem 5rem; */
 }
 
 
@@ -976,7 +976,7 @@ footer p{
     .right{
         position: relative;
         width: 100% !important;
-        padding: 7rem 7srem;
+        padding: 7rem 7rem;
     
     }
     .menu{
@@ -1092,16 +1092,18 @@ footer p{
 }
 
 @media screen and (max-width:400px){
-    .container{
-        padding: 2rem 1rem;
+    .empty-aside{
+        display: none;
     }
-    
-    .right ,.menu{
+    /* .container{
+        padding: 2rem 1rem !important;
+    }
+    */
+    /* .right ,.menu{
         padding: 7rem 5rem !important;
-    }
-    .right .card-profile {
-        
-        width: 100%;
+    }  */
+    .menu{
+        width: 100% !important;
     }
     .hardSkills h2{
         font-size: 1.2rem !important;
