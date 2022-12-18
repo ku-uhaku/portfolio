@@ -973,6 +973,9 @@ footer p{
         padding: 7rem 7srem;
     
     }
+    .menu{
+        padding: 7rem 7srem;
+    }
     .left{
         position: relative;
         width: 100% !important;
@@ -1011,7 +1014,14 @@ footer p{
 }
 
 @media screen and (max-width: 955px) {
+    .right .card-profile {
+     
+        width: 60%;
+    }
     .right{
+        padding: 7rem 7rem !important;
+    }
+    .menu{
         padding: 7rem 7rem !important;
     }
     .qoutes{
@@ -1037,6 +1047,10 @@ footer p{
 @media screen and (max-width: 500px){
     html{
         font-size: 10px;
+    }
+    .right .card-profile {
+       
+        width: 100%;
     }
     h1{
         font-size: 2rem !important;
@@ -1072,6 +1086,10 @@ footer p{
 }
 
 @media screen and (max-width:400px){
+    .right .card-profile {
+        
+        width: 100%;
+    }
     .hardSkills h2{
         font-size: 1.2rem !important;
     }
