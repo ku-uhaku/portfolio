@@ -13,6 +13,7 @@ let leftSide = document.querySelector(".left");
 //function to show menu
 menuBtn.addEventListener("click", (e) => {
   nav.style.zIndex = "10000";
+  nav.style.display = "block";
   emptyNav.style.zIndex = "100000";
   leftSide.style.zIndex = "-100000";
   emptyNav.style.width = leftSide.offsetWidth + "px";
@@ -35,8 +36,9 @@ closeBtn.addEventListener("click", (e) => {
   setTimeout(() => {
     nav.style.zIndex = "-10000";
     leftSide.style.zIndex = "10000";
+    nav.style.display = "none";
   }, 400);
-
+  
   emptyNav.style.transform = "translate(-100%)";
   menuList.style.transform = "translate(110%)";
   document.body.style.overflow = "auto";
