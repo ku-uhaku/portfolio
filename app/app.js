@@ -39,7 +39,7 @@ closeBtn.addEventListener("click", (e) => {
     nav.style.display = "none";
   }, 400);
   
-  emptyNav.style.transform = "translate(-100%)";
+  emptyNav.style.transform = "translate(-110%)";
   menuList.style.transform = "translate(110%)";
   document.body.style.overflow = "auto";
   for (let i = 0; i < navItems.length; i++) {
