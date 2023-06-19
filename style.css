@@ -551,14 +551,10 @@ section .section-header .section-text .section-text-btn::before{
 }
 
 .about .section-content .skills .progress-bar div span{
-    height: 30px;
-    width: 30px;
-    background: var(--light-color);
-    border-radius: 50%;
     position: absolute;
-    top: -15px;
-    left: -15px;
-    color: var(--dark-color);
+    top: -25px;
+    left: -10px;
+    color: var(--light-color);
     margin-left: 100%;
     display: flex;
     justify-content: center;
