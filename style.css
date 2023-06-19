@@ -369,22 +369,18 @@ header .mobile{
 
 .hero-right .circle .text-rounded{
     position: absolute;
-
     top: 5%;
-    /* background: #ffffffff; */
 }
 
 .hero-right .circle .text-rounded span{
     position: absolute;
     left: 50%;
-   
     font-size: 1.5em;
     transform-origin: 0% 90px;
     color: var(--light-color);
 }
 
 @media screen and (max-width: 1070px){
-    
     .container{
         padding: 0 5em;
     }
@@ -435,7 +431,7 @@ header .mobile{
 }
 
 section{
-    margin-bottom: 12em;
+    margin-bottom: 3em;
 }
 section.contact{
     margin-bottom: 0;
@@ -511,6 +507,156 @@ section .section-header .section-text .section-text-btn::before{
     left: 0;
     transform: translate(-50%, -25%);
 }
+
+
+.about .section-content{
+    position: relative;
+    margin-bottom: 2em;
+    display: flex;
+}
+
+.about .section-content .skills{
+
+    flex: 1 1 auto;
+    
+}
+.about .section-content .infos{
+    flex: 1 1 auto;
+
+    width: 350px;
+
+}
+.about .section-content .skills h3{
+    font-size: 1.5em;
+    color: var(--light-color);
+    font-weight: 400;
+}
+
+.about .section-content .skills .progress-bar{
+    position: relative;
+    margin-bottom: 1em;
+    width: 40em;
+    height: .2em;
+    background: var(--light-color-800);
+    border-radius: 20px;
+}
+.about .section-content .skills .progress-bar div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--light-color);
+    border-radius: 20px;
+}
+
+.about .section-content .skills .progress-bar div span{
+    height: 30px;
+    width: 30px;
+    background: var(--light-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    color: var(--dark-color);
+    margin-left: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 600ms ease-in-out;
+}
+.about .section-content .skills .progress-bar .html{
+    animation: html 2s ease-in-out forwards;
+}
+.about .section-content .skills .progress-bar .css{
+    animation: css 2s ease-in-out forwards;
+
+}
+.about .section-content .skills .progress-bar .js{
+    animation: js 2s ease-in-out forwards;
+
+}
+.about .section-content .skills .progress-bar .php{
+    animation: php 2s ease-in-out forwards;
+
+}
+.about .section-content .skills .progress-bar .mysql{
+    animation: mysql 2s ease-in-out forwards;
+
+}
+.about .section-content .skills .progress-bar .react{
+    animation: react 2s ease-in-out forwards;
+
+}
+.about .section-content .skills .progress-bar .laravel{
+    animation: laravel 2s ease-in-out forwards;
+}
+@keyframes html{
+  
+    100%{
+        width: 90%;
+    }
+}
+@keyframes css{
+    100%{
+        width: 80%;
+    }
+}
+@keyframes js{
+    100%{
+        width: 70%;
+    }
+}
+@keyframes php{
+    100%{
+        width: 60%;
+    }
+}
+@keyframes mysql{
+    100%{
+        width: 50%;
+    }
+}
+@keyframes react{
+    100%{
+        width: 40%;
+    }
+}
+@keyframes laravel{
+    100%{
+        width: 30%;
+    }
+}
+
+
+.about .section-content .infos .row-info{
+    display: flex;
+    margin-bottom: 1em;   
+    gap: 2em;
+}
+.about .section-content .infos .row-info h2{
+    flex: 3 1 auto;
+    font-size: 1.1em;
+    color: var(--light-color);
+    width: 30px;
+
+}.about .section-content .infos .row-info p{
+    flex: 1 1 auto;
+    font-size: 1.1em;
+    color: var(--light-color);
+    width: 5px;
+
+}
+
+.about .section-content .infos .row-info h3{
+    flex: 7 1 auto;
+    color: var(--light-color);
+    width: 40px;
+    font-size: 1.1em;
+
+}
+    
+
 @media screen and (max-width: 1110px){
     section .section-header{
         flex-direction: column;
@@ -538,18 +684,17 @@ section .section-header .section-text .section-text-btn::before{
 }
 
 .animation-text{
-    border-top: 1px solid var(--light-color);
-    border-bottom: 1px solid var(--light-color);
+    border-top: 1px solid var(--light-color-100);
+    border-bottom: 1px solid var(--light-color-100);
     width: 120%;
     left: 0;
     padding-block: 1em;
     position: absolute;
-    margin-top: 2em;
-    transform: rotate(-2deg);
+    margin-top: 3em;
+    transform: rotate(-2.55deg);
     background-color: var(--dark-color);
     display: flex;
- /* align-items: center;  */
-    /* justify-content: center;  */
+ 
     
 }
 .animation-text .animation-text-true , .animation-text .animation-text-false{
@@ -591,13 +736,13 @@ section .section-header .section-text .section-text-btn::before{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 17em;
     margin-bottom: 5em;
     gap: 2em;
     flex-wrap: wrap;
     border-top: 1px solid var(--light-color-100);
     border-bottom: 1px solid    var(--light-color-100);
-    padding: 1em;
+    padding: 2em;
 }
 .technology .img-technology{
     display: flex;
@@ -1002,6 +1147,7 @@ section .section-content .section-card .section-card-btn button:hover > svg {
 
 .contact{
     position: relative; 
+    padding: 5em 7em;
    
 }
 .contact::before{
