@@ -1147,7 +1147,9 @@ section .section-content .section-card .section-card-btn button:hover > svg {
 
 .contact{
     position: relative; 
-    padding: 5em 7em;
+    /* padding: 5em 7em; */
+    padding-top: 5em;
+    padding-bottom: 5em;
    
 }
 .contact::before{
