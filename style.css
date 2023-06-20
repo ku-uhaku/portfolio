@@ -5,7 +5,9 @@
     box-sizing: border-box;
 
 }
-
+.saturate{
+    filter: saturate(0);
+}
 :root{
     --light-color: #ffffff;
     --light-color-100: #f2f2f294;
@@ -60,10 +62,9 @@ header{
     /* overflow: hidden; */
     position: fixed;
     z-index: 10000;
-    width: 100%;
+    width: 100vw;
     top: 0;
     background-color: var(--dark-color); 
-     /* padding: 2em 0; */
 }
 
 header .logo{
@@ -82,6 +83,7 @@ header nav ul {
     /* gap: 2rem; */
     list-style: none;
 }
+
 header nav ul li{
     /* border-left: 1px solid var(--light-color-300);  */
     padding: 0 2.4em;
@@ -99,7 +101,7 @@ header .search{
 }
 header .search svg path {
     fill: var(--light-color);
-  }
+}
 
 header .mobile{
     display: none;
@@ -211,16 +213,11 @@ header .mobile{
     position: absolute;
     height: 100vh;
     width: 3000px;
-    margin: 10px auto;
-   
-  
+    margin: 10px auto; 
     background:
       conic-gradient(from 90deg at var(--b) var(--b),
         transparent 90deg,var(--light-color-800) 0) calc(-1*var(--b)) calc(-1*var(--b))/
         calc(100%/var(--nc)) calc(100%/var(--nr));
-       
-
-   
 
 }
 .hero{
@@ -228,6 +225,9 @@ header .mobile{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
 }
 .hero .hero-content{
     display: flex;
@@ -242,7 +242,7 @@ header .mobile{
     font-size: 1.2em;
     text-align: left;
 }
-.hero .hero-content  span{
+.hero .hero-content span{
     color: transparent;
     font-size: 1.2em;
     font-weight: 700;
@@ -312,10 +312,6 @@ header .mobile{
     }
 }
 
-
-    
-
-
 .hero-right .circle .arrow-top-right{
     position: absolute;
     border: 1px solid var(--light-color);
@@ -353,7 +349,6 @@ header .mobile{
     .hero .hero-body{
         margin-top: 1em;
     }
-
 }
 
 @media screen and (max-width: 850px){
@@ -478,18 +473,14 @@ section .section-header .section-text .section-text-btn::before{
 }
 
 .about .section-content .skills{
-
-    flex: 1 1 auto;
-    
+    flex: 1 1 auto;   
 }
 .about .section-content .infos{
     flex: 1 1 auto;
-
     width: 350px;
-
 }
-.about .section-content .skills h3{
-    font-size: 1.5em;
+.about .section-content .skills h2{
+    font-size: 1.4em;
     color: var(--light-color);
     font-weight: 400;
 }
@@ -501,6 +492,9 @@ section .section-header .section-text .section-text-btn::before{
     height: .2em;
     background: var(--light-color-800);
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .about .section-content .skills .progress-bar div{
     position: absolute;
@@ -641,6 +635,13 @@ section .section-header .section-text .section-text-btn::before{
     }
 }
 
+@media screen and (max-width: 885px){
+    .about .section-content .skills .progress-bar{
+        width: 100%;
+    }
+}
+
+
 .animation-text{
     border-top: 1px solid var(--light-color-100);
     border-bottom: 1px solid var(--light-color-100);
@@ -668,6 +669,8 @@ section .section-header .section-text .section-text-btn::before{
 .animation-text .animation-text-false{
     animation: moving-text 30s linear infinite ;
 }
+
+
 @keyframes moving-text{
     from{
         transform: translateX(0);
@@ -690,13 +693,19 @@ section .section-header .section-text .section-text-btn::before{
     cursor: pointer;
 }
 
+@media screen and (max-width: 600px){
+    .animation-text span, .animation-text span{
+        font-size: 2.4em;
+    }
+}
+
 .technology{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 17em;
     margin-bottom: 5em;
-    gap: 2em;
+    gap: 3.5em;
     flex-wrap: wrap;
     border-top: 1px solid var(--light-color-100);
     border-bottom: 1px solid    var(--light-color-100);
@@ -705,7 +714,7 @@ section .section-header .section-text .section-text-btn::before{
 .technology .img-technology{
     display: flex;
     align-items: center;
-    gap: .5em;
+    gap: 1em;
 }
 .technology .img-technology img{
     width: 5em;
@@ -1012,6 +1021,12 @@ section .section-content .section-card .section-card-btn button:hover > svg {
     word-wrap: none;
     color: var(--light-color);
 }
+@media screen and (max-width: 1300px){
+    .animationText .animation-text-true span,.animationText .animation-text-false span{
+        font-size: 3em;
+    }
+    
+}
 
 
 @keyframes moving-text{
@@ -1051,7 +1066,18 @@ section .section-content .section-card .section-card-btn button:hover > svg {
     border-right: none;
     padding: .3em 4em .4em 1em;
 }
+@media screen and (max-width: 800px){
+    .section-content .list-service ul li{
+        font-size: 2em;
+    }
+}
 
+@media screen and (max-width: 480px){
+    .section-content .list-service ul li{
+        font-size: .7em;
+        padding: .3em 3em .4em 1em;
+    }
+}
 .services .card-section{
     position: relative;
     background-image: url("/images/jpg/4.jpg");
@@ -1077,8 +1103,6 @@ section .section-content .section-card .section-card-btn button:hover > svg {
     background-position-y: 140px;
     background-repeat: no-repeat;
     background-size: cover;
- 
-
 } 
 
 @media screen and (max-width: 1300px){
